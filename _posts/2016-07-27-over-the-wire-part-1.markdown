@@ -20,6 +20,7 @@ Skipping the first  few levels, we'll connect to [level 5](http://overthewire.or
 Previously, challenges taught how to us `ls and find` and here we're going to be using more of that.
 
 The hint here is :
+
 >The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties: - human-readable - 1033 bytes in size - not executable
 
 After connecting to the server, there sits a lone folder named `inhere`. Going into it and using `find` we get a whole lot of fodler and files so using the hint we can find what we need.
