@@ -64,6 +64,7 @@ find: `/run/user/16003': Permission denied
 ```
 
 Slightly modifying that since we're getting a lot of *stderr* messages.
+
 ```bash
 find / -size 33c -user bandit7 -group bandit6 2>&1 | grep -v "Permission denied"
 find: `/proc/7611/task/7611/fd/5': No such file or directory
@@ -72,6 +73,7 @@ find: `/proc/7611/fd/5': No such file or directory
 find: `/proc/7611/fdinfo/5': No such file or directory
 /var/lib/dpkg/info/bandit7.password
 ```
+
 We could go furthur and filter for "No much file or directory" but we found what we need.
 
 ```bash
@@ -85,4 +87,4 @@ bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 
-and Done!
+and done!
