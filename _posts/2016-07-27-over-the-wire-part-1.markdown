@@ -8,7 +8,7 @@ image: /assets/article_images/2016-07-27-over-the-wire-part-1/2016-07-27.jpg
 ---
 ######The Beginning
 
-[Over the Wire](http://overthewire.org/wargames/) Has fun challenges for newbies like me. 
+[Over the Wire](http://overthewire.org/wargames/) Has fun challenges for newbies like me.
 
 They start at a beginner series called Bandit and you can work your way up or start at higher levels.
 
@@ -85,3 +85,4 @@ bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 
+and Done!
