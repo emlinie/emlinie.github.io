@@ -39,6 +39,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 ## Level 6 - 7
 The hint is:
+
 >The password for the next level is stored somewhere on the server and has all of the following properties: - owned by user bandit7 - owned by group bandit6 - 33 bytes in size
 
 Similar to the first one. We log in to the home directory but notice that there were no folder or files so it must be somewhere on the _system_. Using the `man` pages for `find` for help:
