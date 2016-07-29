@@ -25,7 +25,7 @@ The hint here is :
 
 After connecting to the server, there sits a lone folder named `inhere`. Going into it and using `find` we get a whole lot of fodler and files so using the hint we can find what we need.
 
-```bash
+```sh
 bandit5@melinda:~/inhere$ ls
 maybehere00  maybehere03  maybehere06  maybehere09  maybehere12  maybehere15  maybehere18
 maybehere01  maybehere04  maybehere07  maybehere10  maybehere13  maybehere16  maybehere19
@@ -33,7 +33,7 @@ maybehere02  maybehere05  maybehere08  maybehere11  maybehere14  maybehere17
 ```
 Using the hint
 
-```bash
+```sh
 bandit5@melinda:~/inhere$ cat `find . -size 1033c`
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
@@ -45,7 +45,7 @@ The hint is:
 
 Similar to the first one. We log in to the home directory but notice that there were no folder or files so it must be somewhere on the _system_. Using the `man` pages for `find` for help:
 
-```bash
+```sh
 bandit6@melinda:~$ find / -size 33c -user bandit7 -group bandit6
 find: `/root': Permission denied
 find: `/proc/tty/driver': Permission denied
@@ -67,7 +67,7 @@ find: `/run/user/16003': Permission denied
 
 Slightly modifying that since we're getting a lot of *stderr* messages.
 
-```bash
+```sh
 find / -size 33c -user bandit7 -group bandit6 2>&1 | grep -v "Permission denied"
 find: `/proc/7611/task/7611/fd/5': No such file or directory
 find: `/proc/7611/task/7611/fdinfo/5': No such file or directory
@@ -78,7 +78,7 @@ find: `/proc/7611/fdinfo/5': No such file or directory
 
 We could go furthur and filter for "No much file or directory" but we found what we need.
 
-```bash
+```sh
 find / -size 33c -user bandit7 -group bandit6 2>&1 | grep -v "Permission denied"
 find: `/proc/7611/task/7611/fd/5': No such file or directory
 find: `/proc/7611/task/7611/fdinfo/5': No such file or directory
@@ -90,3 +90,76 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 
 and done!
+
+## Level 7 - 8
+Hint: 
+
+> The password for the next level is stored in the file data.txt next to the word millionth
+> Commands you may need to solve this level
+> `grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd`
+
+New commands, lets start it simple eh?
+
+```sh
+bandit7@melinda:~$ cat data.txt | grep millionth
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
+
+## Level 8 - 9
+
+Hint:
+
+> The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+Never used `uniq` before, read the `man`!
+
+```sh
+bandit8@melinda:~$ sort data.txt | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+
+
+
+## Level 9 - 10
+
+Hint: 
+
+>  The password for the next level is stored in the file **data.txt** in one of the few human-readable strings, beginning with several ‘=’characters.
+
+I used `strings` giving me readable characters and `grep` to find all lines matching '='
+
+```sh
+bandit9@melinda:~$ cat data.txt | strings | grep =
+epr~F=K
+7?YD=
+?M=HqAH
+/(Ne=
+C=_"
+I========== the6
+z5Y=
+`h(8=`
+n\H=;
+========== password
+========== ism
+N$=&
+l/a=L)
+f=C(
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+ie)=5e
+```
+
+
+
+## Level 10 - 11
+
+Hint:
+
+> The password for the next level is stored in the file **data.txt**, which contains base64 encoded data
+
+base64 decode go!
+
+```sh
+bandit10@melinda:~$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
+
