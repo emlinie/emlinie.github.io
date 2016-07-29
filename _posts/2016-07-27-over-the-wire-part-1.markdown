@@ -147,19 +147,3 @@ f=C(
 ========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 ie)=5e
 ```
-
-
-
-## Level 10 - 11
-
-Hint:
-
-> The password for the next level is stored in the file **data.txt**, which contains base64 encoded data
-
-base64 decode go!
-
-```sh
-bandit10@melinda:~$ base64 -d data.txt
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-```
-
