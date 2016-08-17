@@ -106,6 +106,22 @@ The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 > Commands you may need to solve this level
 > `ssh`, `telnet`, `nc`, `openssl`, `s_client`, `nmap`
 
+Hooray we get an ssh key, using this key we might be able to get to the next level. Also take a note that localhost being this machine would make sense as we're logging on to different users ever level.
+
+```sh
+bandit13@melinda:~$ ssh -i sshkey.private bandit14@localhost
+Could not create directory '/home/bandit13/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+```
+
+
+
 
 
 
