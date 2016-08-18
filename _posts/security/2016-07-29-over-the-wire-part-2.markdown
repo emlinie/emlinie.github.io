@@ -9,7 +9,7 @@ image: /assets/article_images/2016-07-27-over-the-wire-part-1/2016-07-27.jpg
 
 [Over the Wire](http://overthewire.org/wargames/)'s Bandit series is continuing! Lets have more fun! Starting at level 13 and over are methods/commands I don't use very often so it's interesting to see how far they can push me in this series. 
 
-What am I listening to? [K-Hip Hop Beats](https://duckduckgo.com/l/?kh=-1&uddg=https%3A%2F%2Fopen.spotify.com%2Fuser%2Fspotify%2Fplaylist%2F4FtvCOlFKwqo2uPolnuypJ)
+What am I listening to? [K-Hip Hop Beats](https://open.spotify.com/user/spotify/playlist/4FtvCOlFKwqo2uPolnuypJ)
 
 ## Level 10 - 11
 
