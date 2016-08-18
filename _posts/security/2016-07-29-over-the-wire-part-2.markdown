@@ -3,7 +3,7 @@ layout: post
 title:  "Over the Wire - Bandit Levels 10-15"
 date:   2016-07-29 22:53:00
 categories: pentest
-tags: [pentest, featured]
+tags: [pentest]
 image: /assets/article_images/2016-07-27-over-the-wire-part-1/2016-07-27.jpg
 ---
 
