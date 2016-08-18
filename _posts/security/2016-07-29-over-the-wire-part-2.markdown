@@ -21,7 +21,7 @@ base64 decode go!
 
 ```sh
 bandit10@melinda:~$ base64 -d data.txt
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+The password is IFu**************************
 ```
 
 ## Level 11 - 12
@@ -35,7 +35,7 @@ We can use `tr` here to transform the string by *"mapping"* the characters 13 pl
 bandit11@melinda:~$ cat data.txt
 Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
 bandit11@melinda:~$ cat data.txt | tr '[a-zA-Z]' '[n-za-mN-ZA-M]'
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+The password is 5Te**************************
 ```
 
 ## Level 12 - 13
@@ -94,7 +94,7 @@ data  data.tar  data.txt  data5.bin  data5.tar  data6  data9
 bandit12@melinda:/tmp/jxn$ file data9
 data9: ASCII text
 bandit12@melinda:/tmp/jxn$ cat data9
-The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+The password is 8Zj**************************
 ```
 
 
@@ -117,14 +117,30 @@ Are you sure you want to continue connecting (yes/no)? yes
 Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
 
 bandit14@melinda:~$ cat /etc/bandit_pass/bandit14
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+4wc**************************
 ```
 
 
+## Level 14 - 15 
+[Hint](http://overthewire.org/wargames/bandit/bandit15.html):
 
+> The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+> Commands you may need to solve this level
+> `ssh`, `telnet`, `nc`, `openssl`, `s_client`, `nmap`
 
+I have to look up these commands and how they are used and thier usage on the command line. One of the command stand out from the skim reading and from my knowledge. `nc` is what I would be using.
 
+Looking at the man pages for  [`nc`](http://linux.die.net/man/1/nc) tells that it's used for network communication from listening to sending UDP or TCP.
 
+```sh
+bandit14@melinda:~$ nc -v localhost 30000
+Connection to localhost 30000 port [tcp/*] succeeded!
+4wc**************************
+Correct!
+BfM**************************
+```
+
+Wow, we're just getting started eh? See you next time...
 
 
 

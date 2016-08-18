@@ -35,7 +35,7 @@ Using the hint
 
 ```sh
 bandit5@melinda:~/inhere$ cat `find . -size 1033c`
-DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+DXjZ**************************
 ```
 
 ## Level 6 - 7
@@ -86,7 +86,7 @@ find: `/proc/7611/fd/5': No such file or directory
 find: `/proc/7611/fdinfo/5': No such file or directory
 /var/lib/dpkg/info/bandit7.password
 bandit6@melinda:~$ cat /var/lib/dpkg/info/bandit7.password
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+HKB**************************
 ```
 
 and done!
@@ -102,7 +102,7 @@ New commands, lets start it simple eh?
 
 ```sh
 bandit7@melinda:~$ cat data.txt | grep millionth
-millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+millionth       cvX**************************
 ```
 
 ## Level 8 - 9
@@ -115,7 +115,7 @@ Never used `uniq` before, read the `man`!
 
 ```sh
 bandit8@melinda:~$ sort data.txt | uniq -u
-UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+Usv**************************
 ```
 
 
@@ -144,6 +144,6 @@ n\H=;
 N$=&
 l/a=L)
 f=C(
-========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+========== tru**************************
 ie)=5e
 ```
