@@ -21,6 +21,7 @@ apt-get autoremove --purge
 
 
 First perform a dist-upgrade with reboot
+
 ```sh
 apt-get update
 apt-get -y dist-upgrade
@@ -28,6 +29,7 @@ reboot
 ```
 
 And install the guest additions
+
 ```sh
 apt-get update
 apt-get install -y virtualbox-guest-x11
